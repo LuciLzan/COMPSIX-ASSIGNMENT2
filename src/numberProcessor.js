@@ -30,7 +30,7 @@ function findHighest(file) {
     return str
         .match(/([0-9]|.|,)+/g)
         .map((strNum)=>parseFloat(strNum))
-        .sort((a, b) => a - b)
+        .sort((a, b) => b - a)
         [0];
 }
 function findLowest(file) {
@@ -38,7 +38,7 @@ function findLowest(file) {
     return str
         .match(/([0-9]|.|,)+/g)
         .map((strNum) => parseFloat(strNum))
-        .sort((a, b) => b - a)
+        .sort((a, b) => a - b)
         [0];
 }
 function findAverage(file) {
@@ -56,9 +56,14 @@ function findAverage(file) {
     return sum/total;
 }
 
+/*
 //Running the functions
 
 console.log(`Sum of numbers in "${sampleNumbers}": ${calculateSum(sampleNumbers)}`);
 console.log(`Largest number in "${sampleNumbers}": ${findHighest(sampleNumbers)}`);
 console.log(`Smallest number in "${sampleNumbers}": ${findLowest(sampleNumbers)}`);
 console.log(`Average of "${sampleNumbers}": ${findAverage(sampleNumbers)}`);
+
+ */
+
+module.exports = {calculateSum, findHighest, findLowest, findAverage};

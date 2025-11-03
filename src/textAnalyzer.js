@@ -16,7 +16,7 @@ function countWords(file) {
     let str = fs.readFileSync(file, 'utf8').trim();
     //Empty file = no words
     //Count the spaces that have a not space after
-    return str.length > 0 ? str.match(/\w+/g).length+1 : 0
+    return str.length > 0 ? str.match(/\w+/g).length : 0
 
 }
 function findLongestWord(file) {
@@ -30,6 +30,7 @@ function countLines(file) {
     return arr ? arr.length+1: 1
 }
 
+/*
 //Use the funcitons
 console.log(`Word count of ${sampleText}:  ${countWords(sampleText)}`);
 console.log(`Longest word in ${sampleText}:  ${findLongestWord(sampleText)}`);
@@ -37,3 +38,7 @@ console.log(`Lines in ${sampleText}:  ${countLines(sampleText)}`);
 console.log(`Word count of ${quotes}:  ${countWords(quotes)}`);
 console.log(`Longest word in ${quotes}:  ${findLongestWord(quotes)}`);
 console.log(`Lines in ${quotes}:  ${countLines(quotes)}`);
+
+ */
+
+module.exports = {countWords,findLongestWord,countLines}
